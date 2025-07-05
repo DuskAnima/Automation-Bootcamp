@@ -36,6 +36,5 @@ public class InvoiceManagerTest {
         boolean removed = manager.deleteInvoice(inv.getId());
         assertThat(removed).isTrue();
         assertThat(manager.getAll()).isEmpty();
-  }
-
+    }
 }
