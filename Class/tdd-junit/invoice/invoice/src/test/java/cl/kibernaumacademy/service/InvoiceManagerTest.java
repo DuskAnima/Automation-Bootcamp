@@ -27,7 +27,7 @@ public class InvoiceManagerTest {
         Invoice inv = manager.createInvoice("TOCOMPLES", 1500.0);
         boolean updated = manager.updateStatus(inv.getId(), "PAGADA"); // Los estados de las facturas se pueden pagar
         assertThat(updated).isTrue();
-        assertThat(inv.getStatus()).isEqualTo("");
+        assertThat(inv.getStatus()).isEqualTo("PAGADA");
     }
 
     @Test

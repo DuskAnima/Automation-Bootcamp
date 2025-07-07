@@ -1,12 +1,12 @@
 -------------------------------------------------------------------------------
 Test set: cl.kibernaumacademy.service.InvoiceManagerTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.077 s <<< FAILURE! -- in cl.kibernaumacademy.service.InvoiceManagerTest
-cl.kibernaumacademy.service.InvoiceManagerTest.shouldUpdateInvoice -- Time elapsed: 0.059 s <<< FAILURE!
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.626 s <<< FAILURE! -- in cl.kibernaumacademy.service.InvoiceManagerTest
+cl.kibernaumacademy.service.InvoiceManagerTest.shouldUpdateInvoice -- Time elapsed: 0.575 s <<< FAILURE!
 org.opentest4j.AssertionFailedError: 
 
 expected: ""
- but was: "PAGADO"
+ but was: "PAGADA"
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
