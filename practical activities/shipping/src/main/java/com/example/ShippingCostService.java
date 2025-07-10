@@ -5,7 +5,7 @@ public class ShippingCostService {
     public double calcularCosto(double peso, boolean fragil) {
         double tarifaBase;
         if (peso <= 1.0) {
-            tarifaBase = 0.5;
+            tarifaBase = 5.0;
         } else if (peso <=5.0) {
             tarifaBase = 10.0;
         } else {
