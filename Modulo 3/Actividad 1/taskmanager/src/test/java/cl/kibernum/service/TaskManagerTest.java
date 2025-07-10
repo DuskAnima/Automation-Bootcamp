@@ -1,8 +1,8 @@
-package cl.taskmanager.service;
+package cl.kibernum.service;
 
 import org.junit.jupiter.api.*;
 
-import cl.taskmanager.model.Task;
+import cl.kibernum.model.Task;
 
 import static org.assertj.core.api.Assertions.*;
 

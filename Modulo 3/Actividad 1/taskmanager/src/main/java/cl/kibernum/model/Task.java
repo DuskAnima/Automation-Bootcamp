@@ -1,4 +1,4 @@
-package cl.taskmanager.model;
+package cl.kibernum.model;
 
 public class Task {
     private final int id;

@@ -1,10 +1,10 @@
-package cl.taskmanager.service;
+package cl.kibernum.service;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-import cl.taskmanager.model.Task;
+import cl.kibernum.model.Task;
 
 public class TaskManager {
     private final List<Task> tasks = new ArrayList<>();
