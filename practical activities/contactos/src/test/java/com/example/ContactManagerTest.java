@@ -28,7 +28,6 @@ public class ContactManagerTest {
         ContactManager contactManager = new ContactManager();
         Contact contacto = new Contact("Sofía", "12438174501", "sofia@correo.cl");
         contactManager.agregarContactos(contacto);
-        contactManager.eliminarContacos("sofia@correo.cl");
         
         assertThat(contactManager.obtenerContactos(), hasSize(0));
     }
