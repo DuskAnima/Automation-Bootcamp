@@ -36,7 +36,10 @@ public class ContactManagerTest {
     void deleteContat_debeEliminarContactoALaLista () {
         Contact contacto = new Contact("Sofía", "12438174501", "sofia@correo.cl");
         contactManager.agregarContactos(contacto);
+<<<<<<< HEAD
+=======
         contactManager.eliminarContactos("sofia@correo.cl");
+>>>>>>> 385238f09b3362c40e5c9dbcdf533b628f37f7aa
         
         assertThat(contactManager.obtenerContactos(), hasSize(0));
     }
