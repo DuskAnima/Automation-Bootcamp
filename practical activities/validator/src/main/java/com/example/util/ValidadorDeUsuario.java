@@ -5,7 +5,7 @@ import java.util.regex.Pattern;
 import com.example.modelo.Usuario;
 
 public class ValidadorDeUsuario {
-    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\[A-Za-z]{2,}$");
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}$");
 
     public boolean esNombreValido(String nombre) {
         return nombre!= null && !nombre.trim().isEmpty() && nombre.length() >= 3;
@@ -16,10 +16,10 @@ public class ValidadorDeUsuario {
     }
 
     public boolean esMayorDeEdad(int edad) {
-        return edad <= 18;
+        return edad >= 18;
     }
 
-    public boolean valudadorUsuario(Usuario usuario) {
+    public boolean validadorUsuario(Usuario usuario) {
         return  esNombreValido(usuario.getNombre()) &&
                 esEmailValido(usuario.getEmail()) &&
                 esMayorDeEdad(usuario.getEdad());
