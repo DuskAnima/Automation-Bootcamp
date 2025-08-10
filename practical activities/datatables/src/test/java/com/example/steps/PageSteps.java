@@ -17,7 +17,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class PageSteps {
   private WebDriver driver;
-  private String resultado;
+  //private String resultado;
   private FormularioPagoPage formularioPagoPage;
 
   @Before
