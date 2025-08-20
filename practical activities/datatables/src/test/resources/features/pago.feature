@@ -6,9 +6,9 @@ Feature: Validación de Formulario de Pago
     Then el sistema debería mostrar el mensaje "<resultado>"
 
     Examples:
-      | monto | medio         | resultado                      |
-      | 500   | Tarjeta       | Pago procesado correctamente   |
-      | -100  | Tarjeta       | Monto debe ser mayor a cero    |
-      | 0     | Efectivo      | Monto debe ser mayor a cero    |
-      | 150   | Transferencia | Pago procesado correctamente   |
-      | 150   |               | Medio de pago no seleccionado  |
+      | monto | medio         | resultado                     |
+      | 500   | Tarjeta       | Pago procesado correctamente  |
+      | -100  | Tarjeta       | Monto debe ser mayor a cero   |
+      | 0     | Efectivo      | Monto debe ser mayor a cero   |
+      | 150   | Transferencia | Pago procesado correctamente  |
+      | 150   |               | Medio de pago no seleccionado |

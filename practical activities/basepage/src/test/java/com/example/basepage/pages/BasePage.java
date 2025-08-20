@@ -27,7 +27,8 @@ public class BasePage {
     }
 
     public BasePage() {
-        // No hace nada por que todo lo inicializamos en el initDriver()
+        // No hace nada por que 
+        // Todo lo inicializamos en el initDriver()
         // Si se inicializa en el constructor cada step cerrará el navegador y no permitirá que
         // el proximo step abra el navegador
         // Es por eso que se inicializa con initDriver(), porque al ser un método estático que no
@@ -90,7 +91,7 @@ public class BasePage {
     }
 
     public void clickElement(String type, String locator) {
-        find(type, locator).click();
+      wait.until(ExpectedConditions.elementToBeClickable(find(type, locator))).click();
     }
 
     public String getInputValidationByIdBootstrap5(String inputId) {
