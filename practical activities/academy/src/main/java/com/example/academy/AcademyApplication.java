@@ -1,12 +1,13 @@
-package com.example.rest;
+package com.example.academy;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class RestApplication {
+public class AcademyApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RestApplication.class, args);
+		SpringApplication.run(AcademyApplication.class, args);
 	}
+
 }
