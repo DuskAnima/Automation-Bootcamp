@@ -1,10 +1,10 @@
 package com.example.academy.controllers;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -52,7 +52,12 @@ public class StudentControllerRest {
   public ResponseEntity<StudentResponse> create(@Valid @RequestBody StudentRequest request) {
     Student student = new Student(request.getName(), request.getLastname(), request.getEmail());
     Student saved = service.saveStudent(student);
-    return ResponseEntity.status(HttpStatus.CREATED).body(toResponse(saved));
+    /*
+     * Debe incluir header location con la URL del nuevo recurso
+     */
+    URI location = URI.create(String.format("api/students/%s", saved.getId()));
+    //return ResponseEntity.status(HttpStatus.CREATED).body(toResponse(saved));
+    return ResponseEntity.created(location).body(toResponse(saved));
   }
 
   @PutMapping("/{id}")
