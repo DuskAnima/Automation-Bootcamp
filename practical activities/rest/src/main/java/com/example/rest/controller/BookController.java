@@ -40,6 +40,13 @@ public class BookController {
     return ResponseEntity.ok(this.bookService.update(id, bookDTO));
   }
 
+  @GetMapping("/{id}")
+  public ResponseEntity<Book> getBookByID(@PathVariable Long id) {
+    return bookService.findById(id)
+            .map(ResponseEntity::ok)
+            .orElse(ResponseEntity.notFound().build());
+  }
+
   /*
    * @Valid 
    * Activa Bean Validation (Jakarta validator, Hibernate validator) sobre el objeto anotado.
