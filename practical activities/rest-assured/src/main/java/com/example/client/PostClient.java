@@ -1,8 +1,11 @@
 package com.example.client;
 
+// Clase que agrupa métodos para llamar a los endpoints "posts"
 public class PostClient {
-  
+
   public PostClient() {
+  }
+
     // Lista para posts
 
     
@@ -14,5 +17,4 @@ public class PostClient {
     
     // Eliminar un post
   
-  }
 }
