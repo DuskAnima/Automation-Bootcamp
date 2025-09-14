@@ -26,21 +26,21 @@
       <groupId>io.rest-assured</groupId>
       <artifactId>rest-assured</artifactId>
       <version>${rest.assured.version}</version>
-      <scope>main</scope>
+      <scope>test</scope>
     </dependency>
   <!-- Rest Assured json-path: utilidades para navegar y extraer datos de respuestas JSON -->
   <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>json-path</artifactId>
       <version>${rest.assured.version}</version>
-      <scope>main</scope>
+      <scope>test</scope>
     </dependency>
   <!-- Rest Assured xml-path: utilidades para navegar y extraer datos de respuestas XML (no siempre usado, pero útil si la API responde XML) -->
   <dependency>
       <groupId>io.rest-assured</groupId>
       <artifactId>xml-path</artifactId>
       <version>${rest.assured.version}</version>
-      <scope>main</scope>
+      <scope>test</scope>
     </dependency>
 
   <!-- JUnit 5 -->
