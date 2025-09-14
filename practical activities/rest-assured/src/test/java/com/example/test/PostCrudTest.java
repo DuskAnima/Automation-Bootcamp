@@ -7,6 +7,7 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
@@ -30,6 +31,7 @@ public class PostCrudTest {
   }
 
   @Test
+  @Order(1)
   @DisplayName("GET /posts - lista de todos los posts")
   void listPosts_ok() {
     Response response = client.listPosts();
@@ -40,6 +42,7 @@ public class PostCrudTest {
   }
 
   @Test
+  @Order(2)
   @DisplayName("GET /post/{id} - obtiene un post existente")
   void getPost_ok() {
     Response response = client.getPost(1);
@@ -49,6 +52,7 @@ public class PostCrudTest {
   }
 
   @Test
+  @Order(3)
   @DisplayName("POST /post -crear un post")
   void createPost_created() {
     String title = "Aprendiendo tésting con Java";
@@ -64,6 +68,7 @@ public class PostCrudTest {
   }
 
   @Test
+  @Order(4)
   @DisplayName("PUT /post/{id} -actualizar un post")
   void updatePost_ok() {
     int idToUpdate = 1;
@@ -81,6 +86,7 @@ public class PostCrudTest {
   }
 
   @Test
+  @Order(5)
   @DisplayName("PUT /post/{id} -elimina un post")
   void deletePost_ok() {
     int idToDelete = (createdId > 0) ? createdId: 1;
