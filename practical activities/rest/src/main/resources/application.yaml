@@ -6,7 +6,12 @@ spring:
     password: 
   jpa:
     hibernate:
+      # Dejar ddl-auto en 'update' para no borrar datos en cada arranque en desarrollo.
+      # Para que data.sql (scripts de import) se ejecute después de que Hibernate crea/actualice el esquema,
+      # activamos 'defer-datasource-initialization'. Esto evita el error "Table not found".
       ddl-auto: update
+    # Hace que la ejecución de script de SQL (data.sql) se difiera hasta que JPA haya inicializado el esquema.
+    defer-datasource-initialization: true
     database-platform: org.hibernate.dialect.H2Dialect
     show-sql: true
     properties:
@@ -16,6 +21,10 @@ spring:
   h2:
     console:
       enabled: true
+  # Configuración de inicialización de SQL: asegurar UTF-8 para scripts con caracteres acentuados.
+  sql:
+    init:
+      encoding: UTF-8
   application:
     name: apirest
 server:

@@ -84,21 +84,22 @@ public class SecurityConfig {
       .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
       .cors(cors -> cors.configurationSource(corsConfigurationSource()))
       .exceptionHandling(ex -> ex
-        .authenticationEntryPoint(securityExceptionHandler)
-        .accessDeniedHandler(securityExceptionHandler)
-        )
+          .authenticationEntryPoint(securityExceptionHandler)
+          .accessDeniedHandler(securityExceptionHandler)
+      )
       // Permite iframes para poder abrir la consola H2 en dev.  
       .headers(headers -> headers.frameOptions(frame -> frame.disable())) // for H2 console
       .authorizeHttpRequests(auth -> auth
-      // Endpoints públicos (login/registration/refresh y consola H2).
-      .requestMatchers("/api/auth/**", "/h2-console/**").permitAll()
-      // LEcturas de Libros permitidas a USER o ADMIN.
-      .requestMatchers(HttpMethod.GET, "/api/books/**").hasAnyRole("USER", "ADMIN")
-      // Operaciones de escritura solo para ADMIN.
-      .requestMatchers(HttpMethod.POST, "/api/books/**").hasRole("ADMIN")
-      .requestMatchers(HttpMethod.PUT, "/api/books/**").hasRole("ADMIN")
-      .requestMatchers(HttpMethod.DELETE, "/api/books/**").hasRole("ADMIN")
-      .anyRequest().authenticated()
+          // Endpoints públicos (login/registration/refresh y consola H2).
+          //.requestMatchers("/api/auth/**", "/h2-console/**").permitAll()
+          .requestMatchers("/api/auth/**", "/h2-console/**", "api/books/**").permitAll()
+          // Lecturas de Libros permitidas a USER o ADMIN.
+          //.requestMatchers(HttpMethod.GET, "/api/books/**").hasAnyRole("USER", "ADMIN")
+          // Operaciones de escritura solo para ADMIN.
+          .requestMatchers(HttpMethod.POST, "/api/books/**").hasRole("ADMIN")
+          .requestMatchers(HttpMethod.PUT, "/api/books/**").hasRole("ADMIN")
+          .requestMatchers(HttpMethod.DELETE, "/api/books/**").hasRole("ADMIN")
+          .anyRequest().authenticated()
       )
       .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
     return http.build();
